@@ -1,0 +1,16 @@
+/**app.wxss**/
+.container {
+  display: flex;
+  flex-direction: column;
+  background: #f8f8f8;
+  min-height:100vh;
+}
+.row {
+  position: relative;
+  padding: 16rpx 20rpx;
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  background: #fff;
+}

@@ -1,0 +1,136 @@
+<view class="container">
+  <view class="row" bindtap='todetail'>
+    <image class="img_banner" src='../../resources/images/banner_small.png' mode="widthFix"></image>
+    <view style="margin-left: 20rpx;display:flex;flex-direction:column;">
+      <view style="">
+        <label class="lab_bg">限时抢</label>
+        <text class="lab_title">《三字经》课程畅享 15个音频</text>
+      </view>
+      <text style="font-size:60%;color:rgba(102,102,102,1);float:left;">登录“八斗国学”APP学习，畅听《三字经》</text>
+      <view style="display:flex;flex-direction:row;justify-content:space-between;margin-top:16rpx;">
+        <view style="display:flex;flex-direction:row;align-items: flex-end;">
+          <view style="color:#f00;font-weight:500;">
+            <label style="font-size: 80%;">¥</label>
+            <label style="font-size: 120%;margin-left:8rpx;">{{resourcePack.pconfig.grouponPrice}}</label>
+          </view>
+          <label style="font-size: 80%; color:rgba(153,153,153,1);margin-left:10rpx;">
+            <label>原价</label>
+            <label style="text-decoration:line-through;margin-left:8rpx;">¥99</label>
+          </label>
+        </view>
+        <label style="color:rgba(245,45,45,1);border:1px solid rgba(225,52,52,1);border-radius:40rpx;font-size:80%;padding:6rpx 20rpx;font-weight:500;">{{resourcePack.pconfig.grouponUserCounts}}人成团</label>
+      </view>
+    </view>
+  </view>
+  <view class="row" style="flex-direction: column;margin-top:20rpx;padding-bottom: 60rpx;">
+    <view style="margin-top:20rpx;">
+      <label style="font-size:130%;color:rgba(255,135,38,1);font-weight:500;">
+      <block wx:if="{{resourcePack.pgroupon.state==0}}" >
+        拼团中
+      </block>
+      <block wx:if="{{resourcePack.pgroupon.state==1 && resourcePack.pgroupon.hasCurrentUser==0}}" >
+        拼团已满
+      </block>
+      <block wx:if="{{resourcePack.pgroupon.state==1 && resourcePack.pgroupon.hasCurrentUser==1}}" >
+        拼团成功
+      </block>
+      <block wx:if="{{resourcePack.pgroupon.state==-1}}" >
+        拼团失败
+      </block>
+      </label>
+      <label style="font-weight:500;margin-left:20rpx;">
+        <label>仅剩</label>
+        <label style="color:#FF8726;font-size:120%;">{{resourcePack.pconfig.grouponUserCounts-resourcePack.pgroupon.userLsit.length}}</label>
+        <label>个名额</label>
+      </label>
+    </view>
+    <view style="margin-top:26rpx;display:flex;align-items:center;border-bottom:1px solid rgba(235,235,235,1);width:100%;justify-content:center;padding-bottom:40rpx;">
+      <label style="font-size:80%;">距离结束还剩</label>
+      <label class="time" style="margin-left: 20rpx;">{{hour}}</label>
+      <label>:</label>
+      <label class="time">{{minutes}}</label>
+      <label>:</label>
+      <label class="time">{{second}}</label>
+    </view>
+    <view style="display:flex;align-items:center;margin-top:70rpx;">
+      <block wx:for="{{[1,2,3,4]}}" wx:key>
+        <view class="view_avatar">
+          <block wx:if="{{resourcePack.pgroupon.userLsit[index]}}" >
+            <image class="avatar" src='{{resourcePack.pgroupon.userLsit[index].headimgurl}}' mode="widthFix"></image>
+            <label class="active" >{{resourcePack.pgroupon.userLsit[index].nickname}}</label>
+          </block>
+          <block wx:else>
+            <image class="avatar" src='../../resources/images/avatar.png' mode="widthFix"></image>
+            <label class="active" >虚位以待</label>
+          </block>
+        </view>
+        <block wx:if="{{index<3}}">
+          <view class="dot"></view>
+          <view class="dot"></view>
+          <view class="dot"></view>
+        </block>
+      </block>
+     
+     
+     
+    
+
+    </view>
+    <label class="btn" style="margin-top:70rpx;width: 90%;" bindtap='goOrder'>
+      <block wx:if="{{resourcePack.pgroupon.state==0 && resourcePack.pgroupon.hasCurrentUser==1}}" >
+        已参团
+      </block>
+      <block wx:if="{{resourcePack.pgroupon.state==0 && resourcePack.pgroupon.hasCurrentUser==0}}" >
+        立刻参团
+      </block>
+      <block wx:if="{{resourcePack.pgroupon.state==1 && resourcePack.pgroupon.hasCurrentUser==1}}" >
+        登录八斗国学
+      </block>
+      <block wx:if="{{resourcePack.pgroupon.state==1 && resourcePack.pgroupon.hasCurrentUser==0}}" >
+        发起拼团
+      </block>
+      <block wx:if="{{resourcePack.pgroupon.state==-1}}" >
+        重新开团
+      </block>
+    </label>
+    <view style="display:flex;justify-content:space-between;margin-top:70rpx;width: 70%;">
+      <view class="view_share">
+        
+        <button open-type="share" class="btn-share"><image class="avatar" src='../../resources/images/logo_wechat_green.png' mode="widthFix"></image></button>
+        <label>分享给好友</label>
+      </view>
+      <view class="view_share" bindtap='goGenPoster'>
+        <image class="avatar" src='../../resources/images/logo_timeline.png' mode="widthFix"></image>
+        <label>生成海报</label>
+      </view>
+    </view>
+  </view>
+  <view style="padding: 50rpx 20rpx;margin-bottom: 120rpx;display:flex;flex-direction:column;align-items:center;">
+    <label style="color:rgba(102,102,102,1);font-size:24rpx;float:left;">邀请好友参团>拼成功立得>人数不足立即退款>拼团成功立享优惠</label>
+    <label style="color:#FD862C;font-size:28rpx;margin-top:20rpx;text-decoration: underline;" bindtap='goRule'>活动规则</label>
+  </view>
+</view>
+<view class="mask" bindtap="doHideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+
+<view class="modalDlg" catchtouchmove="preventTouchMove" wx:if="{{showModal && showPost}}">
+  <painter palette="{{data}}" catchtouchmove="preventTouchMove" bind:imgOK="onImgOK" bind:imgErr="onImgErr" />
+  <label class="btn" style="margin-top:60rpx;width: 550rpx;" bindtap='doSavePosterImage'>保存图片</label>
+</view>
+
+<view class="modalDlg" style="top:10rpx;" bindtap="doHideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal && showShare}}">
+  <image style="width:220rpx;align-self:flex-end;margin-right:110rpx;" src='/resources/images/arrow.png' mode="widthFix"></image>
+  <image style="width: 300rpx;margin-top:110rpx;" src='/resources/images/logo_big.png' mode="widthFix"></image>
+</view>
+
+<view class="modalDlg" style="padding:30rpx 0rpx;width:700rpx;margin-left:25rpx;background:#fff;border-radius:24rpx;" catchtouchmove="preventTouchMove" wx:if="{{showModal && showRule}}">
+  <label class="rule_title">一.活动限制</label>
+  <label class="rule_detail">限量5000个成团名额,先到先得,额满即止。 </label>
+  <label class="rule_title">二.活动规则</label>  
+  <label class="rule_detail">1.本次活动资源包主题是《三字经》，共15个音频。 </label>
+  <label class="rule_detail">2.在拼团课程详情页中，点击“发起拼团”或“去参团”进入支付页。</label>
+  <label class="rule_detail">3.开团或参团成功后，可将拼团信息分享给好友，指定时间内邀请4人成团即为拼团成功，立享拼团价格，否则系统自动退款。</label>
+  <label class="rule_detail">4.拼团课程不可与其他优惠同享。 </label>
+  <label class="rule_detail">5.每位用户最多可拼团成功1次，拼团失败不占用拼团成功次数。拼团失败的订单，系统会在1-2个工作日内处理退款，款项将原路退回。</label>
+  <label class="rule_detail">6.拼团成功后，请登录“八斗国学”APP，学习拼团课程。</label>
+  <label class="btn" style="margin-top:60rpx;width: 550rpx;" bindtap='doHideModal'>关闭</label>
+</view>

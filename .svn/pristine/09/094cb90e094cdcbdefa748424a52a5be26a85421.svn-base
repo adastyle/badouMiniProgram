@@ -1,0 +1,50 @@
+<view class="container">
+  <view class="row" bindtap='todetail'>
+    <image class="img_banner" src='../../resources/images/banner_small.png' mode="widthFix"></image>
+    <view style="margin-left: 20rpx;display:flex;flex-direction:column;">
+      <view style="">
+        <label class="lab_bg">限时抢</label>
+        <text class="lab_title">《三字经》课程畅享 15个音频</text>
+      </view>
+      <text style="font-size:60%;color:rgba(102,102,102,1);float:left;">登录“八斗国学”APP学习，畅听《三字经》</text>
+      <view style="display:flex;flex-direction:row;justify-content:space-between;margin-top:16rpx;">
+        <view style="display:flex;flex-direction:row;align-items: flex-end;">
+          <view style="color:#f00;font-weight:500;">
+            <label style="font-size: 80%;">¥</label>
+            <label style="font-size: 120%;margin-left:8rpx;">{{resourcePack.pconfig.grouponPrice}}</label>
+          </view>
+          <label style="font-size: 80%; color:rgba(153,153,153,1);margin-left:10rpx;">
+            <label>原价</label>
+            <label style="text-decoration:line-through;margin-left:8rpx;">¥99</label>
+          </label>
+        </view>
+        <label style="color:rgba(245,45,45,1);border:1px solid rgba(225,52,52,1);border-radius:40rpx;font-size:80%;padding:6rpx 20rpx;font-weight:500;">{{resourcePack.pconfig.grouponUserCounts}}人成团</label>
+      </view>
+    </view>
+  </view>
+  <view class="row" style="flex-direction: column;margin-top:20rpx;">
+    <view class="play_memo">
+      <label style="font-weight: 500;">购买须知</label>
+    </view>
+    <view class="memo">
+      <label>1.限量5000个成团名额,先到先得,额满即止。 </label>
+      <label>2.本次活动资源包主题是《三字经》，共15个音频。 </label>
+      <label>3.在拼团课程详情页中，点击“发起拼团”或“去参团”进入支付页。</label>
+      <label>4.开团或参团成功后，可将拼团信息分享给好友，指定时间内邀请4人成团即为拼团成功，立享拼团价格，否则系统自动退款。</label>
+      <label>5.拼团课程不可与其他优惠同享。 </label>
+      <label>6.每位用户最多可拼团成功1次，拼团失败不占用拼团成功次数。拼团失败的订单，系统会在1-2个工作日内处理退款，款项将原路退回。</label>
+      <label>7.拼团成功后，请登录“八斗国学”APP，学习拼团课程。</label>
+    </view>
+  </view>
+  <view class="row" style="background: #f8f8f8;flex-direction: column;padding-bottom:80rpx;">
+    <view class="play_memo">
+      <label style="font-weight: 500;">温馨提示</label>
+    </view>
+    <view style="width:100%;margin-top:16rpx;font-size:80%;color:rgba(102,102,102,1);font-weight:400;display:flex;flex-direction:column;">
+      <label>拼团成功后登录八斗国学APP，在“我的-音视频-已购买”中即可收听本课程。</label>
+    </view>
+    <label class="btn" style="margin-top:40rpx;display:flex;align-items:center;" bindtap='goPay'>
+      <image style="width:40rpx;margin-right:20rpx;" src='../../resources/images/logo_wechat.png' mode="widthFix"></image>微信支付 {{resourcePack.pconfig.grouponPrice}}</label>
+  </view>
+
+</view>

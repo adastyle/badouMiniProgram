@@ -1,0 +1,154 @@
+/* pages/tuan/tuan.wxss */
+
+.img_banner {
+  width: 40%;
+}
+
+.lab_bg {
+  background: linear-gradient(180deg, rgba(255, 148, 36, 1) 0%, rgba(249, 95, 72, 1) 100%);
+  border-radius: 20rpx;
+  font-size: 60%;
+  color: #fff;
+  padding: 4rpx 20rpx;
+  font-weight: 500;
+}
+
+.lab_title {
+  font-weight: 500;
+}
+
+.play_memo {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20rpx;
+}
+
+.memo {
+  width: 100%;
+  margin-top: 16rpx;
+  font-size: 80%;
+  color: rgba(102, 102, 102, 1);
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+}
+
+.memo label {
+  margin-top: 8rpx;
+}
+
+.btn {
+  background: linear-gradient(180deg, rgba(255, 148, 36, 1) 0%, rgba(249, 95, 72, 1) 100%);
+  color: #fff;
+  font-weight: 500;
+  font-size: 90%;
+  padding: 20rpx;
+  border-radius: 40rpx;
+  text-align: center;
+}
+
+.time {
+  background: #3e3e3e;
+  color: #fff;
+  border-radius: 10rpx;
+  padding: 2rpx 12rpx;
+  font-size: 80%;
+  margin-left: 10rpx;
+  margin-right: 6rpx;
+}
+
+.dot {
+  background: rgba(216, 216, 216, 1);
+  width: 8rpx;
+  height: 8rpx;
+  border-radius: 8rpx;
+  margin: 4rpx;
+}
+
+.view_avatar {
+  width: 100rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 18rpx;
+}
+
+.avatar {
+  width: 100rpx;
+  margin-bottom: -10rpx;
+}
+
+.view_avatar label {
+  width: 100%;
+  font-size: 60%;
+  color: #fff;
+  background: rgba(186, 186, 186, 1);
+  border-radius: 20rpx;
+  text-align: center;
+}
+
+.view_avatar label.active {
+  background: linear-gradient(180deg, rgba(255, 148, 36, 1) 0%, rgba(249, 95, 72, 1) 100%);
+  width: 90rpx;
+}
+
+.view_share {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.view_share label {
+  font-size: 80%;
+  color: rgba(51, 51, 51, 1);
+  margin-top: 20rpx;
+}
+
+.mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  z-index: 9000;
+  opacity: 0.7;
+}
+
+.modalDlg {
+  width: 100%;
+  position: fixed;
+  top: 10%;
+  left: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rule_title {
+  color: #d55226;
+  font-weight: 500;
+  width: 640rpx;
+  margin-top: 20rpx;
+}
+
+.rule_detail {
+  color: #8f8f8f;
+  width: 640rpx;
+  font-size: 90%;
+  margin-top: 10rpx;
+  float:left;
+}
+.btn-share::after{
+  border: none;
+}
+.btn-share{
+  padding: 0;
+  line-height: 1.2; 
+  background-color: #fff;
+}
+
+

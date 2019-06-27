@@ -1,0 +1,48 @@
+/**index.wxss**/
+
+.img_banner {
+  width: 750rpx;
+}
+
+.lab_bg {
+  background: linear-gradient(180deg, rgba(255, 148, 36, 1) 0%, rgba(249, 95, 72, 1) 100%);
+  border-radius: 20rpx;
+  font-size: 60%;
+  color: #fff;
+  padding: 4rpx 20rpx;
+  font-weight: 500;
+}
+
+.lab_title {
+  font-weight: 500;
+}
+
+.memo {
+  background: #f8f8f8;
+}
+
+.memo > label {
+  font-size: 80%;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+}
+
+.price {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.price .lab_bg {
+  font-size: 100%;
+  padding: 12rpx 60rpx;
+  border-radius: 40rpx;
+}
+
+.play_memo {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}

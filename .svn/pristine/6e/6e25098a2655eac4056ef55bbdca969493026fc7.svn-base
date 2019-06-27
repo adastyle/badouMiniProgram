@@ -1,0 +1,25 @@
+<!--pages/order/pay.wxml-->
+<view class="container">
+  <view style="display:flex; flex-direction:column;align-items:center;">
+    <image style="width: 130rpx;margin-top: 80rpx;" src='../../resources/images/logo_success.png' mode="widthFix"></image>
+    <label style="color:#333333;font-size:40rpx;font-weight:500;margin: 40rpx;">恭喜您，支付成功</label>
+  </view>
+  <view class="row" style="flex-direction: column;margin-top:20rpx;">
+    <view class="play_memo" style="border-bottom: 1px solid rgba(235,235,235,1);padding-bottom:16rpx;">
+      <label style="font-weight: 500;">订单信息</label>
+    </view>
+    <view class="view_detail">
+      <label>
+        <label>订单编号：</label>
+        <label style="color:#111111;">{{out_trade_no}}</label>
+      </label>
+      <label>
+        <label>支付金额：</label>
+        <label style="color:#FF342E;font-weight:500;">¥{{price}}</label>
+      </label>
+    </view>
+  </view>
+  <view style="display:flex;width: 100%;align-items:center;justify-content:center;margin-top:20rpx;padding-bottom: 30vh;">
+    <label class="btn" style="margin-top:70rpx;width: 80%;" bindtap='toTuan'>继续拼团流程</label>
+  </view>
+</view>

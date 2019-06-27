@@ -1,0 +1,50 @@
+<!--index.wxml-->
+<view class="container">
+  <image class="img_banner" src='../../resources/images/banner_big.png' mode="widthFix"></image>
+  <view class="row">
+    <label class="lab_bg">限时抢</label>
+    <label class="lab_title">《三字经》课程畅享 全本</label>
+  </view>
+  <view class="row memo">
+    <label>拼团成功后登录八斗国学APP，在“我的-音视频-已购买”中即可收听本课程。</label>
+  </view>
+  <view class="row">
+    <view class="price">
+      <view>
+        <view style="color:#f00;font-weight:500;">
+          <label style="font-size: 80%;">¥</label>
+          <label style="font-size: 120%;margin-left:8rpx;">{{resourcePack.pconfig.grouponPrice}}</label>
+        </view>
+        <label style="font-size: 80%; color:rgba(153,153,153,1);">原价
+          <label style="text-decoration:line-through;margin-left:8rpx;">¥99</label>
+        </label>
+      </view>
+      <view wx:if="{{!resourcePack.pgroupon}}">
+        <label class="lab_bg" bindtap='goTuan'>发起拼团</label>
+      </view>
+      <view wx:if="{{resourcePack.pgroupon && resourcePack.pgroupon.state==0}}">
+        <label class="lab_bg" bindtap='goTuan'>进行中</label>
+      </view>
+      <view wx:if="{{resourcePack.pgroupon && resourcePack.pgroupon.state==1}}">
+        <label class="lab_bg" bindtap='goTuan'>已成团</label>
+      </view>
+      <view wx:if="{{resourcePack.pgroupon && resourcePack.pgroupon.state==-1}}">
+        <label class="lab_bg" bindtap='goTuan'>拼团失败</label>
+      </view>
+      
+    </view>
+  </view>
+  <view class="row" style="background: #f8f8f8;"></view>
+  <view class="row" style="flex-direction: column;">
+    <view class="play_memo" style="border-bottom: 1px solid rgba(235,235,235,1);padding-bottom:16rpx;">
+      <label style="font-weight: 500;">拼团玩法</label>
+      <label style="color: #f00;font-weight: 500;">{{resourcePack.pconfig.grouponUserCounts}}人成团</label>
+    </view>
+    <view style="width:100%;margin-top:16rpx;font-size:80%;color:rgba(153,153,153,1);font-weight:400;display:flex;flex-direction:column;">
+      <label>① 选择商品，开团或拼团</label>
+      <label>② 付款后邀请好友参团</label>
+      <label>③ 达到拼团人数，顺利开团</label>
+      <label>④ {{resourcePack.pconfig.grouponTimeLimit}}小时内拼团不成功，全额退款</label>
+    </view>
+  </view>  
+</view>
